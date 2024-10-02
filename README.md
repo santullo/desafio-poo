@@ -23,28 +23,33 @@ Com base no vídeo de lançamento do iPhone de 2007 (link abaixo), você deve el
 ### Diagrama UML (Mermaid)
 ```mermaid
 classDiagram
-    Iphone <|-- ReprodutorMusical 
-    Iphone <|-- AparelhoTelefonico
-    Iphone <|-- NavegadorInternet
-    Iphone : -String nome
-    Iphone : -String modelo
-    Iphone : -String versaoOS
-    
+    NavegadorInternet <|-- Iphone 
+    AparelhoTelefonico <|-- Iphone
+    ReprodutorMusical <|-- Iphone
+
+    class Iphone {
+        -String nome
+        -String modelo
+        -String versaoOS
+    }
+
     class ReprodutorMusical {
-      +tocar() 
-      +pausar()
-      +selecionarMusica()
-      +controlarVolume()
+        +tocar() 
+        +pausar()
+        +selecionarMusica()
+        +controlarVolume()
     }
+
     class AparelhoTelefonico{
-      +ligar(String)
-      +atender()
-      +iniciarCorreioVoz()
+        +ligar(String)
+        +atender()
+        +iniciarCorreioVoz()
     }
+    
     class NavegadorInternet  {
-      +exibirPagina(String)
-      +adicionarNovaAba()
-      +atualizarPagina()
+        +exibirPagina(String)
+        +adicionarNovaAba()
+        +atualizarPagina()
     }
 ```
 
